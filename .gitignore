@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out-tsc
-/src/environments
+/environments
 # dependencies
 /node_modules
 
@@ -28,6 +28,7 @@
 /.sass-cache
 /connect.lock
 /coverage
+/environments
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
