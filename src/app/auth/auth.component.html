@@ -1,8 +1,15 @@
 <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <div class="alert alert-danger" *ngIf="error">
+        <!-- <div class="alert alert-danger" *ngIf="error">
             <p>{{ error }}</p>
-        </div>
+        </div> -->
+
+        <!-- SAMPLE ALERT COMPONENT USE -->
+        <!-- <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert> -->
+
+        <!-- SAMPLE DYNAMIC COMPONENT -->
+        <ng-template appPlaceholder></ng-template>
+
         <div *ngIf="isLoading" style="text-align: center">
             <app-loading-spinner></app-loading-spinner>
         </div>
@@ -17,8 +24,8 @@
                     minlength="6">
             </div>
             <div>
-                <button [disabled]="!f.valid" type="submit" class="btn btn-primary">{{isLoginMode ? 'Login' : 'Sign
-                    Up'}}</button> |
+                <button [disabled]="!f.valid" type="submit" class="btn btn-primary">{{isLoginMode ? 'Login' :
+                    'SignUp'}}</button> |
                 <button type="button" class="btn btn-primary" (click)="onSwitchMode()">
                     Switch to {{isLoginMode ? 'Sign Up' : 'Login'}}
                 </button>

@@ -1,7 +1,15 @@
-import { Component, OnInit } from "@angular/core";
+import {
+  Component,
+  ComponentFactoryResolver,
+  OnInit,
+  OnDestroy,
+  ViewChild,
+} from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { Observable, Subscription } from "rxjs";
+import { AlertComponent } from "../shared/alert/alert.component";
+import { PlaceholderDirective } from "../shared/placeholder/placeholder.directive";
 import { AuthResponseData, AuthService } from "./auth.service";
 
 @Component({
@@ -9,11 +17,19 @@ import { AuthResponseData, AuthService } from "./auth.service";
   templateUrl: "./auth.component.html",
   styleUrls: ["./auth.component.css"],
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit, OnDestroy {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
-  constructor(private authService: AuthService, private router: Router) {}
+  @ViewChild(PlaceholderDirective, { static: false })
+  alertHost: PlaceholderDirective;
+  private closeSub: Subscription;
+
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private componentResolver: ComponentFactoryResolver
+  ) {}
 
   ngOnInit(): void {}
 
@@ -45,9 +61,32 @@ export class AuthComponent implements OnInit {
       },
       (error) => {
         this.error = error;
+        this.showError(error);
         this.isLoading = false;
       }
     );
     form.reset();
+  }
+
+  onHandleError() {
+    this.error = null;
+  }
+  // DYNAMIC COMPONENT EXAMPLE
+  private showError(error: string) {
+    const alertCmpFactory =
+      this.componentResolver.resolveComponentFactory(AlertComponent);
+    const hostViewContainerRef = this.alertHost.viewContainerRef;
+    hostViewContainerRef.clear();
+    const componentRef = hostViewContainerRef.createComponent(alertCmpFactory);
+    componentRef.instance.message = error;
+    this.closeSub = componentRef.instance.close.subscribe(() => {
+      this.closeSub.unsubscribe();
+      hostViewContainerRef.clear();
+    });
+  }
+  ngOnDestroy() {
+    if (this.closeSub) {
+      this.closeSub.unsubscribe();
+    }
   }
 }
