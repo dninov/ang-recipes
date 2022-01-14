@@ -39,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >RecipeService</li>
+  <li >AuthService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,7 +57,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/recipes/recipe.service.ts</code>
+            <code>src/app/auth/auth.service.ts</code>
         </p>
 
 
@@ -78,10 +78,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#recipes" >recipes</a>
+                                <a href="#tokenExpirationTimer" >tokenExpirationTimer</a>
                             </li>
                             <li>
-                                <a href="#recipesChange" >recipesChange</a>
+                                <a href="#user" >user</a>
                             </li>
                         </ul>
                     </td>
@@ -96,25 +96,27 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#addIngredientToShoppingList" >addIngredientToShoppingList</a>
+                                <a href="#autologin" >autologin</a>
                             </li>
                             <li>
-                                <a href="#addRecipe" >addRecipe</a>
+                                <a href="#autologout" >autologout</a>
                             </li>
                             <li>
-                                <a href="#deleteRecipe" >deleteRecipe</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#handleAuthentication" >handleAuthentication</a>
                             </li>
                             <li>
-                                <a href="#getRecipe" >getRecipe</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#handleError" >handleError</a>
                             </li>
                             <li>
-                                <a href="#getRecipes" >getRecipes</a>
+                                <a href="#login" >login</a>
                             </li>
                             <li>
-                                <a href="#setRecipes" >setRecipes</a>
+                                <a href="#logout" >logout</a>
                             </li>
                             <li>
-                                <a href="#updateRecipe" >updateRecipe</a>
+                                <a href="#signup" >signup</a>
                             </li>
                         </ul>
                     </td>
@@ -134,12 +136,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(slService: <a href="../classes/ShoppingListService.html" target="_self">ShoppingListService</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/recipes/recipe.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/auth/auth.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -157,10 +159,22 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>slService</td>
+                                                        <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/ShoppingListService.html" target="_self" >ShoppingListService</a></code>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -186,24 +200,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="addIngredientToShoppingList"></a>
+                    <a name="autologin"></a>
                     <span class="name">
-                        <span ><b>addIngredientToShoppingList</b></span>
-                        <a href="#addIngredientToShoppingList"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>autologin</b></span>
+                        <a href="#autologin"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addIngredientToShoppingList(ingredient: <a href="../classes/Ingredient.html" target="_self">Ingredient[]</a>)</code>
+<code>autologin()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/recipes/recipe.service.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/auth/auth.service.ts:97</a></div>
                 </td>
             </tr>
 
@@ -211,41 +225,9 @@
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>ingredient</td>
-                                    <td>
-                                                <code><a href="../classes/Ingredient.html" target="_self" >Ingredient[]</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -255,24 +237,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="addRecipe"></a>
+                    <a name="autologout"></a>
                     <span class="name">
-                        <span ><b>addRecipe</b></span>
-                        <a href="#addRecipe"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>autologout</b></span>
+                        <a href="#autologout"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addRecipe(recipe: <a href="../classes/Recipe.html" target="_self">Recipe</a>)</code>
+<code>autologout(expirationDuration: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/recipes/recipe.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/auth/auth.service.ts:132</a></div>
                 </td>
             </tr>
 
@@ -293,76 +275,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>recipe</td>
-                                    <td>
-                                                <code><a href="../classes/Recipe.html" target="_self" >Recipe</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="deleteRecipe"></a>
-                    <span class="name">
-                        <span ><b>deleteRecipe</b></span>
-                        <a href="#deleteRecipe"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>deleteRecipe(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/app/recipes/recipe.service.ts:46</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>index</td>
+                                    <td>expirationDuration</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
@@ -393,24 +306,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getRecipe"></a>
+                    <a name="handleAuthentication"></a>
                     <span class="name">
-                        <span ><b>getRecipe</b></span>
-                        <a href="#getRecipe"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Private</span>
+                        <span ><b>handleAuthentication</b></span>
+                        <a href="#handleAuthentication"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getRecipe(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleAuthentication(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, expiresIn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/recipes/recipe.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/auth/auth.service.ts:67</a></div>
                 </td>
             </tr>
 
@@ -431,9 +346,116 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>userId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>token</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>expiresIn</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleError"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>handleError</b></span>
+                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleError(error: <a href="https://angular.io/api/common/http/HttpErrorResponse" target="_blank">HttpErrorResponse</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/auth/auth.service.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>error</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpErrorResponse" target="_blank" >HttpErrorResponse</a></code>
                                     </td>
 
                                     <td>
@@ -462,24 +484,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getRecipes"></a>
+                    <a name="login"></a>
                     <span class="name">
-                        <span ><b>getRecipes</b></span>
-                        <a href="#getRecipes"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getRecipes()</code>
+<code>login(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/recipes/recipe.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/auth/auth.service.ts:44</a></div>
                 </td>
             </tr>
 
@@ -487,10 +509,54 @@
             <tr>
                 <td class="col-md-4">
 
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
+                    <div class="io-description">
+                        
+                    </div>
                 </td>
             </tr>
         </tbody>
@@ -499,24 +565,61 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="setRecipes"></a>
+                    <a name="logout"></a>
                     <span class="name">
-                        <span ><b>setRecipes</b></span>
-                        <a href="#setRecipes"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>setRecipes(recipes: <a href="../classes/Recipe.html" target="_self">Recipe[]</a>)</code>
+<code>logout()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/recipes/recipe.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/app/auth/auth.service.ts:123</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signup"></a>
+                    <span class="name">
+                        <span ><b>signup</b></span>
+                        <a href="#signup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signup(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/auth/auth.service.ts:22</a></div>
                 </td>
             </tr>
 
@@ -537,9 +640,21 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>recipes</td>
+                                    <td>email</td>
                                     <td>
-                                                <code><a href="../classes/Recipe.html" target="_self" >Recipe[]</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -554,88 +669,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="updateRecipe"></a>
-                    <span class="name">
-                        <span ><b>updateRecipe</b></span>
-                        <a href="#updateRecipe"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>updateRecipe(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, newRecipe: <a href="../classes/Recipe.html" target="_self">Recipe</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/recipes/recipe.service.ts:42</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>index</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>newRecipe</td>
-                                    <td>
-                                                <code><a href="../classes/Recipe.html" target="_self" >Recipe</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -655,28 +689,23 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="recipes"></a>
+                    <a name="tokenExpirationTimer"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
-                        <span ><b>recipes</b></span>
-                        <a href="#recipes"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>tokenExpirationTimer</b></span>
+                        <a href="#tokenExpirationTimer"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/Recipe.html" target="_self" >Recipe[]</a></code>
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/recipes/recipe.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/auth/auth.service.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -687,21 +716,21 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="recipesChange"></a>
+                    <a name="user"></a>
                     <span class="name">
-                        <span ><b>recipesChange</b></span>
-                        <a href="#recipesChange"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Subject&lt;Recipe[]&gt;()</code>
+                        <i>Default value : </i><code>new BehaviorSubject&lt;User&gt;(null)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/recipes/recipe.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/auth/auth.service.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -714,58 +743,141 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { Ingredient } from &quot;../shared/ingredient.model&quot;;
-import { Recipe } from &quot;./recipe.model&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpErrorResponse } from &quot;@angular/common/http&quot;;
+import { Injectable } from &quot;@angular/core&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { BehaviorSubject, Subject, throwError } from &quot;rxjs&quot;;
+import { catchError, tap } from &quot;rxjs/operators&quot;;
+import { User } from &quot;./user.model&quot;;
+import { environment } from &quot;src/environments/environment&quot;;
+export interface AuthResponseData {
+  idToken: string;
+  email: string; //The email for the authenticated user.
+  refreshToken: string; //	A Firebase Auth refresh token for the authenticated user.
+  expiresIn: string; //	The number of seconds in which the ID token expires.
+  localId: string; //	The uid of the authenticated user.
+  registered?: boolean;
+}
+@Injectable({ providedIn: &quot;root&quot; })
+export class AuthService {
+  user &#x3D; new BehaviorSubject&lt;User&gt;(null);
+  private tokenExpirationTimer: any;
 
-import { ShoppingListService } from &quot;../shopping-list/shopping-list.service&quot;;
-import { Subject } from &quot;rxjs&quot;;
-@Injectable()
-export class RecipeService {
-  recipesChange &#x3D; new Subject&lt;Recipe[]&gt;();
-  private recipes: Recipe[] &#x3D; [];
-  // private recipes: Recipe[] &#x3D; [
-  //   new Recipe(
-  //     &quot;Burger&quot;,
-  //     &quot;A tasty burger recipe&quot;,
-  //     &quot;https://upload.wikimedia.org/wikipedia/commons/1/11/Cheeseburger.png&quot;,
-  //     [new Ingredient(&quot;Meat Paddy&quot;, 1), new Ingredient(&quot;French Fries&quot;, 10)]
-  //   ),
-  //   new Recipe(
-  //     &quot;Schintzel&quot;,
-  //     &quot;A tasty schintzel recipe&quot;,
-  //     &quot;https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Breitenlesau_Krug_Br%C3%A4u_Schnitzel.JPG/220px-Breitenlesau_Krug_Br%C3%A4u_Schnitzel.JPG&quot;,
-  //     [new Ingredient(&quot;Meat&quot;, 1), new Ingredient(&quot;French Fries&quot;, 10)]
-  //   ),
-  // ];
-  constructor(private slService: ShoppingListService) {}
-
-  setRecipes(recipes: Recipe[]) {
-    this.recipes &#x3D; recipes;
-    this.recipesChange.next(this.recipes.slice());
+  constructor(private http: HttpClient, private router: Router) {}
+  signup(email: string, password: string) {
+    return this.http
+      .post&lt;AuthResponseData&gt;(
+        &#x60;https://identitytoolkit.googleapis.com/v1/accounts:signUp?key&#x3D;${environment.api}&#x60;,
+        {
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        }
+      )
+      .pipe(
+        catchError(this.handleError),
+        tap((response) &#x3D;&gt; {
+          this.handleAuthentication(
+            response.email,
+            response.localId,
+            response.idToken,
+            +response.expiresIn
+          );
+        })
+      );
+  }
+  login(email: string, password: string) {
+    return this.http
+      .post&lt;AuthResponseData&gt;(
+        &#x60;https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key&#x3D;${environment.api}&#x60;,
+        {
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        }
+      )
+      .pipe(
+        catchError(this.handleError),
+        tap((response) &#x3D;&gt; {
+          this.handleAuthentication(
+            response.email,
+            response.localId,
+            response.idToken,
+            +response.expiresIn
+          );
+        })
+      );
   }
 
-  getRecipes() {
-    return this.recipes.slice();
-  }
-  getRecipe(id: number) {
-    return this.recipes[id];
-  }
-  addRecipe(recipe: Recipe) {
-    this.recipes.push(recipe);
-    this.recipesChange.next(this.recipes.slice());
-  }
-  updateRecipe(index: number, newRecipe: Recipe) {
-    this.recipes[index] &#x3D; newRecipe;
-    this.recipesChange.next(this.recipes.slice());
-  }
-  deleteRecipe(index: number) {
-    this.recipes.splice(index, 1);
-    this.recipesChange.next(this.recipes.slice());
+  private handleAuthentication(
+    email: string,
+    userId: string,
+    token: string,
+    expiresIn: number
+  ) {
+    const experationDate &#x3D; new Date(new Date().getTime() + expiresIn * 1000);
+    const user &#x3D; new User(email, userId, token, experationDate);
+    this.user.next(user);
+    this.autologout(expiresIn * 1000);
+    localStorage.setItem(&quot;userData&quot;, JSON.stringify(user));
   }
 
-  addIngredientToShoppingList(ingredient: Ingredient[]) {
-    this.slService.addIngredients(ingredient);
+  private handleError(error: HttpErrorResponse) {
+    let errorMessage &#x3D; &quot;An unknown error occured!&quot;;
+    if (!error.error || !error.error.error) {
+      return throwError(errorMessage);
+    }
+    switch (error.error.error.message) {
+      case &quot;EMAIL_EXISTS&quot;:
+        errorMessage &#x3D; &quot;This email exists already&quot;;
+        break;
+      case &quot;EMAIL_NOT_FOUND&quot;:
+      case &quot;INVALID_PASSWORD&quot;:
+        errorMessage &#x3D; &quot;Please enter a correct username and password!&quot;;
+        break;
+    }
+    return throwError(errorMessage);
+  }
+
+  autologin() {
+    const userData: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } &#x3D; JSON.parse(localStorage.getItem(&quot;userData&quot;));
+    if (!userData) {
+      return;
+    }
+    const loadedUser &#x3D; new User(
+      userData.email,
+      userData.id,
+      userData._token,
+      new Date(userData._tokenExpirationDate)
+    );
+
+    if (loadedUser.token) {
+      this.user.next(loadedUser);
+      const expirationDuration &#x3D;
+        new Date(userData._tokenExpirationDate).getTime() -
+        new Date().getTime();
+      this.autologout(expirationDuration);
+    }
+  }
+
+  logout() {
+    this.user.next(null);
+    this.router.navigate([&quot;/auth&quot;]);
+    localStorage.removeItem(&quot;userData&quot;);
+    if (this.tokenExpirationTimer) {
+      clearTimeout(this.tokenExpirationTimer);
+    }
+    this.tokenExpirationTimer &#x3D; null;
+  }
+  autologout(expirationDuration: number) {
+    this.tokenExpirationTimer &#x3D; setTimeout(() &#x3D;&gt; {
+      this.logout();
+    }, expirationDuration);
   }
 }
 </code></pre>
@@ -810,7 +922,7 @@ export class RecipeService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'RecipeService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
